@@ -30,38 +30,41 @@ class MyWebviewViewProvider implements vscode.WebviewViewProvider {
       )
     );
     return `<!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Embedded Webview</title>
-								<script>
-									const toggle = () => {
-											const video = document.getElementById('coffee');
-											const status = document.getElementById('status');
-											const explainer = document.getElementById('explainer');
-											video.volume = Number.EPSILON;
-											if (video.paused) {
-													video.play();
-													status.innerText = 'Pause';
-													explainer.innerText = 'The video is now playing. Don't switch away from the Explorer tab or close the view, or the video will stop.';
-											} else {
-													video.pause();
-													status.innerText = 'Play';
-													explainer.innerText = 'The video is not playing. Click the button to resume.';
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Embedded Webview</title>
+              <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                  const toggle = () => {
+                    const video = document.getElementById('coffee');
+                    const status = document.getElementById('status');
+                    const explainer = document.getElementById('explainer');
+                    video.volume = Number.EPSILON;
+                    if (video.paused) {
+                      video.play();
+                      status.innerText = 'Pause';
+                      explainer.innerText = 'The video is now playing. Don\\'t switch away from the Explorer tab or close the view, or the video will stop.';
+                    } else {
+                      video.pause();
+                      status.innerText = 'Play';
+                      explainer.innerText = 'The video is not playing. Click the button to resume.';
+                    }
+                  }
 
-											}
-									}
-								</script>
-            </head>
-						<body>
-								<video id="coffee" width="1" height="1" loop controls>
-									<source src="${videoUri}" type="video/mp4">
-								</video>
-								<button id="status" onclick="toggle()">Play</button>
-								<span id="explainer">The video is not playing. Click the button to resume.</span>
-							</body>
-            </html>`;
+                  document.getElementById('status').addEventListener('click', toggle);
+                });
+              </script>
+          </head>
+          <body>
+              <video id="coffee" width="1" height="1" loop controls>
+                <source src="${videoUri}" type="video/mp4">
+              </video>
+              <button id="status">Play</button>
+              <span id="explainer">The video is not playing. Click the button to resume.</span>
+          </body>
+          </html>`;
   }
 }
 
