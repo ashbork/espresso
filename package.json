@@ -3,6 +3,10 @@
   "displayName": "Espresso",
   "description": "Keeps the screen awake while you're away using a video in a webview.",
   "publisher": "ashleytarczyski-borkowicz",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ashbork/espresso.git"
+  },
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.93.0"
