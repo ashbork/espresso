@@ -1,5 +1,5 @@
 {
-  "name": "espresso",
+  "name": "espresso-keepawake",
   "displayName": "Espresso",
   "description": "Keeps the screen awake while you're away using a video in a webview.",
   "publisher": "ashleytarczyski-borkowicz",
