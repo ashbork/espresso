@@ -2,6 +2,10 @@
 
 PowerToys Awake, caffeinate? No, thanks, I'll have an `espresso` (a looped 1s video with a technically-not-muted audio track). Possibly the first time someone has set a `video`'s volume to `Number.EPSILON`.
 
+
+<p align="center"><img src="https://github.com/user-attachments/assets/fb24355f-9e4d-4a58-b44c-2ec14bcdd06a" style="width: 60%"/></p>
+
+
 Keeps the screen awake by embedding a Webview in your Explorer tab. The webview contains a `video` element that plays a 1s-long video on loop. With the volume set to... `Number.EPSILON`.
 
 ## Caveats
